@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Weather Updates</title>
+        <style>
+            .weather-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .weather-card {
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 20px;
+                margin: 10px;
+                width: 30%;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .weather-card h2 {
+                margin-bottom: 10px;
+            }
+
+            .weather-info {
+                font-size: 14px;
+            }
+
+            #loader {
+                text-align: center;
+                margin: 20px 0;
+                display: none;
+            }
+
+        </style>
+
+
+    </head>
+    
+    <body>
+        <div class="Header">  
+            <h1>Header Logo</h1>
+                <span class="headlinks">
+                    <a class="headlinks" href="index.html">My Page </a>
+                    <a class="headlinks" href="index2.html">Posts</a>
+                    <a class="headlinks" href="index3.html">Weather Updates</a>
+                </span>
+        </div> 
+
+        
+
+        <div id="weatherContainer" class="weather-container"></div>
+        <div id="loader">Fetching weather data...</div>
+
+
+        <script>
+            const locations = [
+            { name: "Tokyo, Japan", latitude: 35.6895, longitude: 139.6917 },
+            { name: "New York, USA", latitude: 40.7128, longitude: -74.0060 },
+            { name: "London, UK", latitude: 51.5074, longitude: -0.1278 },
+            { name: "Sydney, Australia", latitude: -33.8688, longitude: 151.2093 },
+            { name: "Paris, France", latitude: 48.8566, longitude: 2.3522 }
+        ];
+
+       
+        function fetchWeather() {
+            document.getElementById('loader').style.display = 'block'; 
+
+            locations.forEach(location => {
+                const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${location.latitude}&longitude=${location.longitude}&current_weather=true`;
+
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        const weather = data.current_weather;
+                        const weatherCard = `
+                            <div class="weather-card" id="weather-${location.name.replace(/ /g, '-')}"">
+                                <h2>${location.name}</h2>
+                                <div class="weather-info">
+                                    <p><strong>Temperature:</strong> ${weather.temperature}°C</p>
+                                    <p><strong>Wind Speed:</strong> ${weather.windspeed} km/h</p>
+                                    <p><strong>Weather Code:</strong> ${weather.weathercode}</p>
+                                </div>
+                            </div>
+                        `;
+
+                        
+                        const existingCard = document.getElementById(`weather-${location.name.replace(/ /g, '-')}`);
+                        if (existingCard) {
+                            existingCard.innerHTML = weatherCard;
+                        } else {
+                            document.getElementById('weatherContainer').innerHTML += weatherCard;
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error fetching weather data: ", error);
+                    })
+                    .finally(() => {
+                        document.getElementById('loader').style.display = 'none'; 
+                    });
+            });
+        }
+
+        
+        fetchWeather();
+
+        
+        setInterval(fetchWeather, 600000); 
+
+
+
+        </script>
+        
+        <footer class="footer-container">
+        <p>Copyright ©</p>
+        </footer>
+    
+    </body>
+
+
+
+</html>

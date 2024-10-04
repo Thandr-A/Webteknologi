@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <link rel="stylesheet" href="style.css">
+        <title>Header Logo</title>
+        <style>
+            @font-face {
+            font-family: 'Roboto-BlackItalic';
+            src: url(fonts/Roboto-BlackItalic.ttf);
+            font-style: italic;
+            }   
+
+            @font-face {
+            font-family: 'Roboto-Bold';
+            src: url(fonts/Roboto-Bold.ttf);
+            font-weight: bold;
+            }
+
+            @font-face {
+            font-family: 'Roboto-Light';
+            src: url(fonts/Roboto-Light.ttf);
+            font-weight: 300;
+            }
+
+            @font-face {
+            font-family: 'Roboto-Medium';
+            src: url(fonts/Roboto-Medium.ttf);
+            font-weight: 500;
+            }
+
+            @font-face {
+            font-family: 'Roboto-Regular';
+            src: url(fonts/Roboto-Regular.ttf);
+            font-weight: 400;
+            }
+
+            @font-face {
+            font-family: 'Roboto-Thin';
+            src: url(fonts/Roboto-Thin.ttf);
+            font-weight: 100;
+            }
+
+            h2 {    
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+
+            .Header2 {
+                display: flex;
+                justify-content:  space-between;
+                align-items: center;
+                color: white;
+                background-color: #243444;
+                padding-top: 10px;
+                padding-left: 25%;
+                padding-right: 25%;
+            }
+
+
+            .box1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                max-width: 400px;
+                text-align: center;
+                flex-direction: column;
+            }
+
+            .box2 {
+                display: flex;
+                width: 35%;
+                height: 200px;
+                background-color: #6c757d;
+                justify-content: center;
+                align-items: center;
+                color: white;
+            }
+
+            .box1, .box2 {
+                flex: 1;
+                padding: 20px;
+                
+            }
+            .signup-btn {
+                background-color: #007bff;
+                color: white;
+                padding: 10px 20px;
+                font-size: 1rem;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            .signup-btn:hover {
+                background-color: #0056b3;
+            }
+
+            .info {
+                text-align: center;
+            }
+
+            .container1, .container2 {
+                display: flex;
+                margin: 1%;
+                justify-content: center;
+                padding-left: 30%;
+                padding-right: 30%;
+            }
+
+            .text {
+                padding: 1%;
+            }
+
+            .box3 {
+                min-width: 20rem;
+                min-height: 10rem;
+                border: 3px solid #007bff;
+                border-radius: 10px;
+            }
+
+            .quote-container {
+                width: 100%;
+                text-align: center;
+                background-color: #e4e5eb;
+                padding: 80px 20px;
+            }
+
+            .quote-text {
+                font-style: italic;
+                font-size: 1.2em;
+                color: #333;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .author {
+                font-weight: bold;
+                display: block;
+                margin-top: 20px;
+            }
+
+
+            .cta-container {
+                width: 60%;
+                text-align: center;
+                background-color: #4785f7;
+                color: white;
+                padding: 20px;
+                justify-content: center;
+                margin: 20px auto;
+                border-radius: 10px;
+            }
+
+            .cta-container h2 {
+                margin: 0;
+                font-size: 1.8em;
+            }
+
+            .cta-container p {
+                font-size: 1em;
+                margin: 10px 0;
+            }
+
+            .cta-container button {
+                background-color: white;
+                color: #4785f7;
+                padding: 15px 30px;
+                border: none;
+                border-radius: 5px;
+                font-size: 1em;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                
+            }
+
+            .cta-container button:hover {
+                background-color: #d1e0fc;
+            }
+
+
+         </style>
+     </head>
+
+     <body>
+        <div class="Header">  
+            <h1>Header Logo</h1>
+                <span class="headlinks">
+                    <a class="headlinks" href="index.html">My Page</a>
+                    <a class="headlinks" href="index2.html">Posts</a>
+                    <a class="headlinks" href="index3.html">Weather Updates</a>
+                </span>
+        </div>      
+        
+        <div class="Header2">
+                <div class="box1">
+                    <h2>This website is awesome</h2>
+                    <p>
+                        Lorem ipsum dlor sit aet, consectur adipiscing elite, set do eiusmod tempor endicidunt.
+                    </p>  
+                <button class="signup-btn">Sign Up</button>
+                </div>
+                <div class="box2">
+                    <p>This is a placeholder for an image</p>
+                </div>
+         </div> 
+         
+         <div class="info">
+            <h1>Some random information</h1>
+         </div>
+        <div class="container1">
+            <div class="box3"></div>
+            <div class="text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Quis ipsum suspendisse ultrices gravida. 
+                    Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                </p>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Quis ipsum suspendisse ultrices gravida. 
+                    Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+            </div>
+            <div class="box3"></div>
+        </div>
+
+        <div class="quote-container">
+            <p class="quote-text">
+                "This is an inspiring quote, or a testimonial from a customer. 
+                Maybe it's just filling up space, or maybe people will actually read it. 
+                Who knows? All I know is that it looks nice"
+                <br><span class="author">- Thor</span>
+            </p>
+        </div>
+    
+        
+        <div class="cta-container">
+            <h2>Call to action! It's time!</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+            <button>Sign up</button>
+        </div>
+    
+        <footer class="footer-container">
+            <p>Copyright ©</p>
+        </footer>
+        
+
+
+
+</html>
